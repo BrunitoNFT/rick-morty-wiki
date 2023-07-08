@@ -12,8 +12,8 @@ const page = async () => {
 
   return (
     <>
-    <Alert severity="info" sx={{margin:2}}>This rendering type is done on the server. In each request the Next.js server fetches info and renders all the code saving it into the cache, for that reason if we go to the same url twice we won't have any delay because the page is cached in the server storage. Therefore at the first time that we click the page we will have a small delay before the content is processed in the server and once the new page is loaded we won’t have any loading since the fetch was done on the server. 
-What happens here? If we have a fetch the first time is going to be dynamic, but later next.js's server will save on the cache this result. Therefore in the following calls the server is going to return cached data and will not do the fetch again.
+    <Alert severity="info" sx={{margin:2}}>This rendering type is done on the server. In each request the Next.js server fetches info and renders all the code saving it into the cache, for that reason if we go to the same url twice we won&apos;t have any delay because the page is cached in the server storage. Therefore at the first time that we click the page we will have a small delay before the content is processed in the server and once the new page is loaded we won&apos;t have any loading since the fetch was done on the server. 
+What happens here? If we have a fetch the first time is going to be dynamic, but later next.js`s server will save on the cache this result. Therefore in the following calls the server is going to return cached data and will not do the fetch again.
 
 Because in Next.js 13 the default cache parameter in fetch is:
 <Box sx={{margin:1}}>
@@ -37,7 +37,7 @@ After the 60-second window, the next request will still show the cached (stale) 
 Next.js will trigger a regeneration of the data in the background.
 Once the route generates successfully, Next.js will invalidate the cache and show the updated route. If the background regeneration fails, the old data would still be unaltered.
 
-When a request is made to a route segment that hasn’t been generated, Next.js will dynamically render the route on the first request. Future requests will serve the static route segments from the cache.
+When a request is made to a route segment that hasn`t been generated, Next.js will dynamically render the route on the first request. Future requests will serve the static route segments from the cache.
 
 If you are using fetch in your project you can use the revalidate feature it in this way:
 
