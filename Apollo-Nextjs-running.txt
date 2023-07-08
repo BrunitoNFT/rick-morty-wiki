@@ -1,0 +1,42 @@
+"use client"
+
+import Image from 'next/image'
+import { GQLClient } from '@/gql/graphql-client-provider'
+import GET_CHARACTER from '@/gql/queries/character'
+import { CharacterFullData } from '@/interfaces/character-interface'
+import { useEffect, useState } from 'react'
+
+
+
+
+async function getCharacterf(){
+  const res = await GQLClient.query<Promise<{character: CharacterFullData}>>({
+    query: GET_CHARACTER,
+    variables: {id:  1},
+  })
+  return res
+}
+
+
+
+
+
+export default  function Home(){
+
+  const [data,setData] = useState<any>()
+
+  
+
+  useEffect(()=>{
+    getCharacterf().then(res => {
+      setData(res)
+    })
+  },[])
+
+  return (
+    <main>
+      Hello world! {JSON.stringify(data)}
+    </main>
+  )
+
+  }
