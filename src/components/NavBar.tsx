@@ -18,7 +18,6 @@ const pages = [
   { title: 'SSG', href: '/ssg' },
   { title: 'ISR', href: '/isr' },
 ];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState<null | HTMLElement>(
@@ -86,6 +85,24 @@ function ResponsiveAppBar() {
                 </Link>
               ))}
             </Menu>
+          </Box>
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+            {pages.map((page) => (
+              <Link
+                key={page.href}
+                href={page.href}
+                onClick={handleCloseNavMenu}
+                style={{
+                  marginLeft: 20,
+                  color: 'white',
+                  display: 'block',
+                  textDecoration: 'none',
+                }}
+              >
+                {page.title}
+              </Link>
+            ))}
           </Box>
         </Toolbar>
       </Container>
