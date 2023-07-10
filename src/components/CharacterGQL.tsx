@@ -31,9 +31,25 @@ const CharacterGQL = ({ id }: CharacterGQLProps) => {
           cache, if you click twice the same link Apollo won`t do the fetch, it
           will get it from the cache and will be instantly.{' '}
         </Alert>
-        <Box sx={{ display: 'flex', gap: '20px', justifyContent: 'center' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: {
+              xs: 'column',
+              md: 'row',
+            },
+            gap: '20px',
+            justifyContent: 'center',
+            alignItems: 'center',
+            textAlign: 'center',
+          }}
+        >
           <Image
-            style={{ borderRadius: '50%', background: 'lightgray' }}
+            style={{
+              borderRadius: '50%',
+              background: 'lightgray',
+              maxWidth: '90%',
+            }}
             src={data?.character?.image}
             width={300}
             height={300}

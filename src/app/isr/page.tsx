@@ -62,7 +62,7 @@ const page = async () => {
         width={width}
         height={height}
         alt={image.description}
-        style={{ background: 'gray' }}
+        style={{ background: 'gray',maxWidth: '90%' }}
       />
     </Box>
   );

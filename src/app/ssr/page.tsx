@@ -164,7 +164,7 @@ const page = async () => {
         width={width}
         height={height}
         alt={image.description}
-        style={{ background: 'gray' }}
+        style={{ background: 'gray', maxWidth: '90%' }}
       />
 
       <Alert severity="info" sx={{ my: 2 }}>
@@ -193,7 +193,7 @@ const page = async () => {
         width={width2}
         height={height2}
         alt={image2.description}
-        style={{ background: 'gray' }}
+        style={{ background: 'gray', maxWidth: '90%' }}
       />
       <Alert severity="info" sx={{ my: 2 }}>
         This above fetch is cached so is going to be the same image for all the
