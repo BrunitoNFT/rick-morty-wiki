@@ -15,8 +15,8 @@ const page = async () => {
 
   const response2 = await fetch(
     'https://api.unsplash.com/photos/random?client_id=' +
-      process.env.UNSPLASH_ACCESS_KEY,
-    { next: { tags: ['ssr'] } }
+      process.env.UNSPLASH_ACCESS_KEY
+    //,{ next: { tags: ['ssr'] } }
   );
   const image2 = await response2.json();
   const width2 = Math.min(500, image2.width);
