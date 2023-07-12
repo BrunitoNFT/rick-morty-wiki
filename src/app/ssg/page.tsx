@@ -11,8 +11,8 @@ export const metadata = {
 const page = async () => {
   const response = await fetch(
     'https://api.unsplash.com/photos/random?client_id=' +
-      process.env.UNSPLASH_ACCESS_KEY
-      //,{ next: { tags: ['ssg'] } }
+      process.env.UNSPLASH_ACCESS_KEY,
+    { next: { tags: ['sss'] } }
   );
   const image = await response.json();
   const width = Math.min(500, image.width);
